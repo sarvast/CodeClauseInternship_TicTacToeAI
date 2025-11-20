@@ -1,0 +1,17 @@
+# Tic-Tac-Toe AI Project Dependencies
+# Python 3.6+ required
+
+# Core dependencies (usually included with Python)
+# tkinter - GUI framework (built-in with most Python installations)
+
+# Development dependencies
+# unittest - Testing framework (built-in)
+# random - Random number generation (built-in)
+
+# Optional dependencies for enhanced development
+# pytest>=6.0.0  # Alternative testing framework
+# black>=21.0.0  # Code formatting
+# flake8>=3.8.0  # Code linting
+
+# Note: This project uses only Python standard library modules
+# No external packages required for basic functionality
