@@ -13,17 +13,15 @@ import os
 # Add parent directory to path to import game modules
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-try:
-    from TicTacToe import TicTacToe, RandomComputerPlayer, SmartComputerPlayer
-except ImportError:
-    # Handle different file naming
-    import importlib.util
-    spec = importlib.util.spec_from_file_location("game", "../Tic-Tac-Toe..py")
-    game_module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(game_module)
-    TicTacToe = game_module.TicTacToe
-    RandomComputerPlayer = game_module.RandomComputerPlayer
-    SmartComputerPlayer = game_module.SmartComputerPlayer
+# Import game module from the correctly named file
+import importlib.util
+game_file_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "Tic-Tac-Toe..py")
+spec = importlib.util.spec_from_file_location("game", game_file_path)
+game_module = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(game_module)
+TicTacToe = game_module.TicTacToe
+RandomComputerPlayer = game_module.RandomComputerPlayer
+SmartComputerPlayer = game_module.SmartComputerPlayer
 
 
 class TestTicTacToeGame(unittest.TestCase):
